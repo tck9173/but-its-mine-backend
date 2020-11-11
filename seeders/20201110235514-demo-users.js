@@ -6,17 +6,17 @@ module.exports = {
       {
         name:'test1',
         username: 'test1',
-        password: 'test1'
+        password: '$2a$10$JTzVhrhvW37qQY6tAWBBIevNIHE/kmGqgejRKeRzYLzHqec2yqbyS'
       },
       {
         name: 'test2',
         username: 'test2',
-        password: 'test2'
+        password: '$2a$10$JTzVhrhvW37qQY6tAWBBIevNIHE/kmGqgejRKeRzYLzHqec2yqbyS'
       },
       {
         name: 'test3',
         username: 'test3',
-        password: 'test3'
+        password: '$2a$10$JTzVhrhvW37qQY6tAWBBIevNIHE/kmGqgejRKeRzYLzHqec2yqbyS'
       }
     ])
   },
