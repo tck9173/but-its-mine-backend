@@ -4,6 +4,7 @@ const User = require('../models').User;
 
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const constants = require('../constants');
 
 const signup = (req, res) => {
     bcrypt.genSalt(10, (err, salt) => {

@@ -7,6 +7,7 @@ const routes = require('./routes')
 const jwt =require('jsonwebtoken');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const constants = require('./constants');
 
 const corsOptions = {
     origin: ['http://localhost:3000'],
