@@ -21,6 +21,9 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER
       },
+      img: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         defaultValue: new Date(),
         allowNull: false,

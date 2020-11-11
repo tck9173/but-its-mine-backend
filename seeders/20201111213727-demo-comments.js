@@ -2,12 +2,21 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert('Posts', [
+    await queryInterface.bulkInsert('Comments', [
       {
-        title:'Test 1',
+        body:'comment1',
         userId: 1,
-        body: 'body',
-        img: 'https://cdna.pcpartpicker.com/static/forever/images/userbuild/329711.14b6595b626472fe2916ebb7759465b4.1600.jpg'
+        postId: 1
+      },
+      {
+        body:'comment2',
+        userId: 1,
+        postId: 1
+      },
+      {
+        body:'comment3',
+        userId: 1,
+        postId: 1
       },
     ])
   },

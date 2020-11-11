@@ -1,11 +1,24 @@
 const Post = require('../models').Post;
 const User = require('../models').User;
+const Comment = require('../models').Comment;
 
 const constants = require('../constants');
 
 const getAllPosts = (req, res) => {
     Post.findAll({
-        attributes: ['id', 'title', 'body', 'likes', 'userId'],
+        attributes: ['id', 'title', 'body', 'likes', 'userId', 'img'],
+    })
+    .then(allPosts => {
+        res.status(constants.SUCCESS).json(allPosts)
+    })
+    .catch(err => {
+        res.status(constants.INTERNAL_SERVER_ERROR).send(`ERROR: ${err}`);
+    })
+}
+
+const getAllComments = (req, res) => {
+    Comment.findAll({
+        attributes: ['id', 'body', 'likes', 'userId', 'postId'],
     })
     .then(allPosts => {
         res.status(constants.SUCCESS).json(allPosts)
@@ -41,12 +54,24 @@ const createPost = (req, res) => {
     })
 }
 
+const createComment = (req, res) => {
+    req.body.userId = req.user.id;
+
+    Comment.create(req.body)
+    .then(newPost => {
+        res.status(constants.SUCCESS).json(newPost)
+    })
+    .catch(err => {
+        res.status(constants.INTERNAL_SERVER_ERROR).send(`ERROR: ${err}`);
+    })
+}
+
 const getPostsByUser = (req, res) => {
     Post.findAll({
         where: {
             userId: req.user.id
         },
-        attributes: ['id', 'title', 'body', 'userId', 'likes'],
+        attributes: ['id', 'title', 'body', 'userId', 'likes', 'img'],
     })
     .then(allPosts => {
         res.status(constants.SUCCESS).json(allPosts)
@@ -113,8 +138,10 @@ const deletePost = (req, res) => {
 
 module.exports = {
     createPost,
+    createComment,
     getPostsByUser,
     getAllPosts,
+    getAllComments,
     deletePost,
     editPost,
     getPostById

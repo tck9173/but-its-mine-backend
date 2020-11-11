@@ -12,16 +12,22 @@ module.exports = {
         type: Sequelize.STRING
       },
       likes: {
-        type: Sequelize.STRING
+        defaultValue: 0,
+        type: Sequelize.INTEGER
       },
       userId: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
+      },
+      postId: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
+        defaultValue: new Date(),
         allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
+        defaultValue: new Date(),
         allowNull: false,
         type: Sequelize.DATE
       }
