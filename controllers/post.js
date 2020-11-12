@@ -7,6 +7,11 @@ const constants = require('../constants');
 const getAllPosts = (req, res) => {
     Post.findAll({
         attributes: ['id', 'title', 'body', 'likes', 'userId', 'img'],
+        include: [
+            {
+                model: User,
+            }
+        ]
     })
     .then(allPosts => {
         res.status(constants.SUCCESS).json(allPosts)
