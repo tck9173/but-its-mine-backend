@@ -11,7 +11,6 @@ const constants = require('./constants');
 
 const corsOptions = {
     origin: ['https://but-its-mine.surge.sh/'],
-    [Access-Control-Allow-Origin]: any,
     methods: "GET,POST,PUT,DELETE",
     credentials: true, 
     optionsSuccessStatus: 200 
