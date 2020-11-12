@@ -10,7 +10,8 @@ const bodyParser = require('body-parser');
 const constants = require('./constants');
 
 const corsOptions = {
-    origin: ['https://but-its-mine.surge.sh'],
+    origin: ['http://localhost:3000']
+    //origin: ['https://but-its-mine.surge.sh'],
     methods: "GET,POST,PUT,DELETE",
     credentials: true, 
     optionsSuccessStatus: 200 
