@@ -24,6 +24,11 @@ const getAllPosts = (req, res) => {
 const getAllComments = (req, res) => {
     Comment.findAll({
         attributes: ['id', 'body', 'likes', 'userId', 'postId'],
+        include: [
+            {
+                model: User,
+            }
+        ]
     })
     .then(allPosts => {
         res.status(constants.SUCCESS).json(allPosts)
@@ -61,7 +66,6 @@ const createPost = (req, res) => {
 
 const createComment = (req, res) => {
     req.body.userId = req.user.id;
-
     Comment.create(req.body)
     .then(newPost => {
         res.status(constants.SUCCESS).json(newPost)
