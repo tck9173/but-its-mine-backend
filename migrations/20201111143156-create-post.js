@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       body: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(2000)
       },
       likes: {
         defaultValue: 0,

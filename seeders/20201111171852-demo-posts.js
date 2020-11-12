@@ -20,6 +20,12 @@ module.exports = {
         userId: 3,
         body: "I'm several months late posting my first completed build, and the release of the RTX 3000 series GPUs renders this build somewhat poor value for the performance. That being said, I'm super happy with all my part selections, performance, and appearance.",
         img: "https://cdna.pcpartpicker.com/static/forever/images/userbuild/331372.69772902c068090422be1fa194c912d8.1600.jpg"
+      },
+      {
+        title: 'Atlantis - 2',
+        userId: 2,
+        body: 'I use this PC exclusively for 3440x1440 Ultrawide gaming, particularly racing simulators like F1 2020, Project Cars, and Dirt.',
+        img: 'https://cdna.pcpartpicker.com/static/forever/images/userbuild/331400.d986a450a0efd9dd2feb2b37b085508a.512.jpg'
       }
     ])
   },
