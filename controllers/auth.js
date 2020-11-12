@@ -49,6 +49,7 @@ const login = (req, res) => {
         }
     })
     .then(foundUser => {
+        console.log(foundUser)
         if(foundUser){
             bcrypt.compare(req.body.password, foundUser.password, (err, match) => {
                 if(match){
