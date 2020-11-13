@@ -2,21 +2,21 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert('Comments', [
+    await queryInterface.bulkInsert('comments', [
       {
         body:'WOW! Such a clean build!',
-        userId: 1,
-        postId: 2
+        user_id: 1,
+        post_id: 2
       },
       {
         body:'Great cable management, I am really jealous.',
-        userId: 2,
-        postId: 3
+        user_id: 2,
+        post_id: 3
       },
       {
         body:'Tasteful RGB. Some builds go overboard',
-        userId: 3,
-        postId: 1
+        user_id: 3,
+        post_id: 1
       },
     ])
   },
