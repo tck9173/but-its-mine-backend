@@ -12,13 +12,12 @@ const constants = require('./constants');
 const corsOptions = {
     // origin: ['http://localhost:3000'],
     origin: ['https://but-its-mine.surge.sh'],
-    methods: "GET,POST,PUT",
-    //removed "DELETE" from methods
+    methods: "GET,POST,PUT,DELETE",
     credentials: true, 
     optionsSuccessStatus: 200 
 }
 
-app.options("*", cors(corsOptions));
+app.options("*", cors());
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
