@@ -77,7 +77,7 @@ const login = (req, res) => {
             res.status(constants.BAD_REQUEST).send(`ERROR: Incorrect Username/Password`);
         }
     })
-    .catch(err => 
+    .catch(err => {
         res.status(constants.INTERNAL_SERVER_ERROR).send(`ERROR: ${err}`);
     })
 }
