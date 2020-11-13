@@ -34,6 +34,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('comments');
+    await queryInterface.dropTable('Comments');
   }
 };
