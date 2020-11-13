@@ -36,6 +36,7 @@ const signup = (req, res) => {
                 });
             })
             .catch(err => {
+                res.send(`Coming from verify signup: ${err}`)
                 res.status(constants.BAD_REQUEST).send(`ERROR: ${err}`);
             })
         })
@@ -78,6 +79,7 @@ const login = (req, res) => {
         }
     })
     .catch(err => {
+        res.send(`Coming from login: ${err}`)
         res.status(constants.INTERNAL_SERVER_ERROR).send(`ERROR: ${err}`);
     })
 }
@@ -90,6 +92,7 @@ const verifyUser = (req, res) => {
         res.status(constants.SUCCESS).json(foundUser);
     })
     .catch(err => {
+        res.send(`Coming from verify user: ${err}`)
         res.status(constants.INTERNAL_SERVER_ERROR).send(`ERROR: ${err}`);
     })
 }
