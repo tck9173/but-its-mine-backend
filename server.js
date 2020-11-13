@@ -17,8 +17,8 @@ const corsOptions = {
     optionsSuccessStatus: 200 
 }
 
-app.options("*", cors(corsOptions))
-app.use(cors(corsOptions))
+app.options("*", cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 const verifyToken = (req, res, next) => {
