@@ -40,6 +40,9 @@ const editProfile = (req, res) => {
             attributes: ['id', 'name', 'username']
         })
         .then(userProfile => {
+            console.log('here')
+            console.log(req.user.id)
+            console.log(userProfile)
             res.status(constants.SUCCESS).json(userProfile)
         })
     })
