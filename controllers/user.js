@@ -43,7 +43,9 @@ const editProfile = (req, res) => {
             console.log('here')
             console.log(req.user.id)
             console.log(userProfile)
-            res.status(constants.SUCCESS).json(userProfile)
+            res.status(constants.SUCCESS).json({
+                "user" : userProfile
+            })
         })
     })
     .catch(err => {
