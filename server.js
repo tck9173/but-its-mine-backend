@@ -47,6 +47,9 @@ app.use('/auth', routes.auth);
 app.use('/forum/posts/all', routes.post);
 app.use('/auth/verify', verifyToken, routes.auth);
 app.use('/forum/posts', verifyToken, routes.post);
+app.use('/user', verifyToken, routes.user);
+
+
 
 app.listen(process.env.PORT, () => {
     console.log(`I am listening on  ${process.env.PORT}`);
